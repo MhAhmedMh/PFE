@@ -1,0 +1,133 @@
+<div class="position-relative">
+    <div class="position-absolute top-0 end-0">
+        <div class="nav-item">
+            <a class="nav-link collapsed" routerLink="/teams/createTeams">
+                <button type="button" class="btn btn-outline-secondary">
+                    <i class="ri-team-fill"></i> Créer une équipe
+                </button> </a
+            ><!-- End GestiondesUtilisateurs Nav -->
+        </div>
+    </div>
+
+    <div class="pagetitle">
+        <h1>Équipes</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Équipes</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="titre" *ngIf="teamData.length>=1"><h5>Mes équipe</h5></div>
+    <section class="section dashboard" style="padding-top: 20px">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let e of teamData">
+                    <div class="card info-card sales-card">
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"
+                                ><i class="bi bi-three-dots"></i
+                            ></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="#"
+                                        [routerLink]="['/teams/manage-team/', e.name, e.id]"
+                                        ><i class="bi bi-gear"></i>| Gérer l'equipe</a
+                                    >
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" (click)="deletTeam(e)"
+                                        ><i i class="bi bi-trash"></i>| Supprimer l'equipe</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- type="button" (click)="paramsPass(e.id) -->
+                        <div
+                            class="card-body"
+                            type="button"
+                            [routerLink]="['/teams/', e.name, e.id]"
+                        >
+                            <h5 class="card-title">{{ e.name }}</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div
+                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                                >
+                                    <i i class="ri-team-line"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h5>{{ e.user.userName }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="titre" *ngIf="studentTeamData.length>=1"><h5>Équipes</h5></div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let e of studentTeamData">
+                    <div class="card info-card sales-card">
+                        <!-- <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"
+                ><i class="bi bi-three-dots"></i
+              ></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-gear"></i>| Gérer l'equipe</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person-plus"></i>| Ajouter un membre</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-journal-x"></i>| Quitter l'equipe</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-pencil"></i>| Modifier l'equipe</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i i class="bi bi-trash"></i>| Supprimer l'equipe</a
+                  >
+                </li>
+              </ul>
+            </div> -->
+                        <div
+                            class="card-body"
+                            type="button"
+                            [routerLink]="['/teams/', e.name, e.id]"
+                        >
+                            <h5 class="card-title">{{ e.name }}</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div
+                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                                >
+                                    <i i class="ri-team-line"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h5>{{ e.user.userName }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

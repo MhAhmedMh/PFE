@@ -1,0 +1,34 @@
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="index.html">ConfCall</a></h1>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" [routerLink]="['/user/create-conf']">Créer conférance</a></li>
+        <li><a class="nav-link scrollto" href="#">Conférances</a></li>
+
+        <li class="dropdown">
+          <a class="colorDropDown"><span>{{user.userName}}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Mon profile</a></li>
+            <li><a (click)="logout()">Se déconnecter</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header>
+
+<section class="d-flex align-items-center">
+
+  <div class="container">
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,50 @@
+<div class="pagetitle">
+  <h1>Liste des Enseignants</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" routerLink="/GestiondesUtilisateurs">Gestion des Utilisateurs</li>
+      <li class="breadcrumb-item active">Liste des Enseignants</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+<section class="section">
+  <div class="row">
+    <div class="col">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Liste des Enseignants </h5>
+          <table class="table table-hover table-bordered border-primary">
+              <thead>
+                <tr>
+                  <th scope="col">Image</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prénom</th>
+                  <th scope="col">cin</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let e of teacherData  | paginate:{itemsPerPage:tableSize, currentPage: page, totalItems:count }; let i=index">
+                  <td class="image" ><img class="rounded-circle" src="{{e.imageURL}}"></td>
+                  <td>{{e.firstName}}</td>
+                  <td>{{e.lastName}}</td>
+                  <td>{{e.cin}}</td>
+                  <td>{{e.email}}</td>
+                  <td>{{e.phone}}</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls previousLabel="Prev"
+            nextLabel="Next"
+            (pageChange)="onTableDataChange($event)"></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+

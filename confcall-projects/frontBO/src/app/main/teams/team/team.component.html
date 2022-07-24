@@ -1,0 +1,93 @@
+<section class="section dashboard">
+    <div class="col-lg-12">
+        <div class="card">
+            <section class="section dashboard">
+                <div class="col-xl-12">
+                    <div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"
+                            ><i class="bi bi-three-dots"></i
+                        ></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    [routerLink]="['/teams/manage-team/', name, id]"
+                                    ><i class="bi bi-gear"></i>| Gérer l'equipe</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <h5 class="card-title" style="padding: 20px 20px 0px">{{ name }}</h5>
+                </div>
+            </section>
+            <div class="position-relative">
+                <div class="position-absolute top-0 end-0">
+                    <div class="nav-item">
+                        <a class="nav-link collapsed">
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class="bi bi-camera-video"></i> Lancer une réunion
+                            </button>
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class="bi bi-calendar4"></i> Planifier une réunion
+                            </button> </a
+                        ><!-- End GestiondesUtilisateurs Nav -->
+                    </div>
+                </div>
+                <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+                        <li class="nav-item">
+                            <button
+                                class="nav-link active"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-overview"
+                            >
+                                Conversation
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button
+                                class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-edit"
+                            >
+                                Cours
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button
+                                class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-settings"
+                            >
+                                Fichiers
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content pt-2">
+                        <div
+                            class="tab-pane fade show active profile-overview"
+                            id="profile-overview"
+                        >
+                            <h5 class="card-title">Profile</h5>
+                        </div>
+
+                        <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                            <!-- Profile Edit Form -->
+                            <h5 class="card-title">Profile</h5>
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-change-password">
+                            <!-- Change Password Form -->
+                            <h5 class="card-title">Profile</h5>
+                        </div>
+                    </div>
+                    <!-- End Bordered Tabs -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

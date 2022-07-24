@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card {
+    margin-top: 10px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* linear-gradient(40deg, rgb(6, 160, 221)0%, rgb(60, 121, 182)70%) */
+    background: linear-gradient(40deg, rgb(6, 160, 221)0%, rgb(60, 121, 182)70%);
+}
+
+.card h1,
+h3,
+h2,
+h6 {
+    color: aliceblue
+}
+
+label {
+    color: aliceblue;
+    font-size: 13px;
+}
+
+.signupLink {
+    color: aliceblue;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.loginLink {
+    color: aliceblue;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.forgetPwd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.display_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text_size {
+    font-size: 14px;
+}
+
+.btnAction,
+.btnAction:hover {
+    color: #1496c9;
+    background-color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #c7e6f1;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn{
+    background-color: white;
+}
